@@ -1,0 +1,5 @@
+ssh-tunnel (1.0) bullseye; urgency=medium
+
+  * Initial release.
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 24 Mar 2023 01:37:58 +0100
