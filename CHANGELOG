@@ -1,3 +1,9 @@
+ssh-tunnel (1.1) bullseye; urgency=medium
+
+  * Added README.md specifying how the server and the device should be configured
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Wed, 13 Sep 2023 20:56:41 +0200
+
 ssh-tunnel (1.0) bullseye; urgency=medium
 
   * Initial release.
