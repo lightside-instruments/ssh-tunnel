@@ -1,8 +1,8 @@
-#SSH tunneling
+# SSH tunneling
 
 Here are the steps to configure a server for SSH tunneling of ports (in the example port 22 of remote devices without public IP are mapped to a local port on a server with public IP) so that a remote client connecting to the public port on the server is indeed connecting to the tunneled port of the device.
 
-##On remote device
+## On remote device
 
 
 As root:
@@ -20,12 +20,12 @@ Test by starting manually:
 
 Edit /etc/rc.local:
 ```
-/root/ssh-tunnel/ssh-tunnel.sh 1>>/var/log/ssh-tunnel.stdout 2>>/var/log/ssh-tunnel.stderr
+/root/ssh-tunnel/ssh-tunnel.sh 1>>/var/log/ssh-tunnel.stdout 2>>/var/log/ssh-tunnel.stderr &
 ```
 
 Reboot.
 
-##On tunneling/forwarding server with public ip
+## On tunneling/forwarding server with public ip
 
 Add following lines to /etc/ssh/sshd_config:
 ```
@@ -52,7 +52,7 @@ vi .ssh/authorized_keys
 
 Your server is ready to tunnel connections from clients from the public address  to the client.
 
-##On remote client
+## On remote client
 ```
 ssh myserver.com -p 22001
 ```

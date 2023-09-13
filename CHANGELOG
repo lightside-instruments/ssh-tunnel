@@ -1,3 +1,10 @@
+ssh-tunnel (1.2) bullseye; urgency=medium
+
+  * Fixed bug in /etc/rc.local not backgrounding the ssh-tunnel.sh script on the device was missing '&'
+  * Cosmetic fix header markdown syntax was missing space
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Wed, 13 Sep 2023 22:28:06 +0200
+
 ssh-tunnel (1.1) bullseye; urgency=medium
 
   * Added README.md specifying how the server and the device should be configured
