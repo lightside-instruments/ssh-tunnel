@@ -56,3 +56,34 @@ Your server is ready to tunnel connections from clients from the public address 
 ```
 ssh myserver.com -p 22001
 ```
+
+# VPN over SSH: IP forwarding with TUN devices
+
+As a second step you can open TUN forwarding to any of the devices made available and use it as VPN router.
+
+## On server (VPN device)
+Add "PermitTunnel yes" to /etc/ssh/sshd_config and restart the sshd server.
+
+## On laptop
+Add "Tunnel yes" and "TunnelDevice any:any" to /etc/ssh/ssh_config
+```
+sudo ssh -w0:0 root@server.com -p 22001
+```
+
+At this point on both sides "tun0" network devices are created. Assuming the server (VPN device) has a local network device wlan0 192.168.14.0/24
+
+On server:
+```
+ifconfig tun0 10.2.2.2 netmask 255.255.255.252
+```
+
+On laptop:
+```
+  ifconfig tun0 10.2.2.1 netmask 255.255.255.252
+  route add -net 192.168.14.0/24 dev tun0
+```
+
+Then you can validate you have access to any other device on the 192.168.14.0/24 network
+```
+ping 192.168.14.20
+```
