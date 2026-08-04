@@ -1,7 +1,10 @@
 #!/usr/bin/bash
 
-source /etc/ssh-tunnel/config
-
+if [ $# -eq 0 ] ; then
+    source /etc/ssh-tunnel/config
+else
+    source $1
+fi
 
 while [ 1 ] ; do
 

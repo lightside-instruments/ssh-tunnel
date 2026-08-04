@@ -1,3 +1,9 @@
+ssh-tunnel (1.6) trixie; urgency=medium
+
+  * Added command line specified config for multiple redundant tunnels
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Tue, 04 Aug 2026 12:53:54 +0200
+
 ssh-tunnel (1.5) bullseye; urgency=medium
 
   * Added VPN over SSH IP forwarding with TUN devices instructions
